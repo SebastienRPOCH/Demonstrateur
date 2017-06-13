@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>ForumGLA</display-name>
+
+	<session-config>
+		<cookie-config>
+			<http-only>true</http-only>
+			<!-- <secure>true</secure> Ne charge pas les css pour la première visite-->
+		</cookie-config>
+	</session-config>
+	
+	<filter>
+        <filter-name>FilterServlet</filter-name>
+        <filter-class>fr.istic.gla.tp.servlet.FilterServlet</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>FilterServlet</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+	<servlet>
+        <servlet-name>accueil</servlet-name>
+        <servlet-class>fr.istic.gla.tp.servlet.AccueilServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+        <servlet-name>resetDatabase</servlet-name>
+        <servlet-class>fr.istic.gla.tp.servlet.ResetDatabaseServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+        <servlet-name>auth</servlet-name>
+        <servlet-class>fr.istic.gla.tp.servlet.AuthServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+        <servlet-name>deconnexion</servlet-name>
+        <servlet-class>fr.istic.gla.tp.servlet.DeconnexionServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+        <servlet-name>fil</servlet-name>
+        <servlet-class>fr.istic.gla.tp.servlet.FilServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+        <servlet-name>createFil</servlet-name>
+        <servlet-class>fr.istic.gla.tp.servlet.CreateFilServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+        <servlet-name>ecrireMessage</servlet-name>
+        <servlet-class>fr.istic.gla.tp.servlet.EcrireMessageServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+        <servlet-name>profil</servlet-name>
+        <servlet-class>fr.istic.gla.tp.servlet.ProfilServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+        <servlet-name>upload</servlet-name>
+        <servlet-class>fr.istic.gla.tp.servlet.UploadServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+        <servlet-name>supprMessage</servlet-name>
+        <servlet-class>fr.istic.gla.tp.servlet.SupprMessageServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+        <servlet-name>supprMessage</servlet-name>
+	    <url-pattern>/supprMessage</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+        <servlet-name>upload</servlet-name>
+	    <url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+        <servlet-name>profil</servlet-name>
+	    <url-pattern>/profil</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+        <servlet-name>ecrireMessage</servlet-name>
+	    <url-pattern>/ecrireMessage</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+        <servlet-name>createFil</servlet-name>
+	    <url-pattern>/createFil</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+        <servlet-name>fil</servlet-name>
+	    <url-pattern>/fil</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+        <servlet-name>deconnexion</servlet-name>
+	    <url-pattern>/deconnexion</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+        <servlet-name>auth</servlet-name>
+	    <url-pattern>/auth</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+        <servlet-name>resetDatabase</servlet-name>
+	    <url-pattern>/resetDatabase</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+        <servlet-name>accueil</servlet-name>
+	    <url-pattern>/accueil</url-pattern>
+	</servlet-mapping>
+</web-app>

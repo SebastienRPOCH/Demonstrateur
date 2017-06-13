@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="fr.istic.gla.tp.beans.Utilisateur" table="USERS">
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+		<property name="login" column="LOGIN" type="string" />
+		<property name="password" column="PASSWORD" type="string" />
+		<property name="profil" column="PROFIL" type="string" />
+		<property name="image" column="IMAGE" type="string" />
+	</class>
+</hibernate-mapping>

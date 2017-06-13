@@ -1,0 +1,66 @@
+body {
+  font-family: Verdana,sans-serif;
+  font-size: 11px;
+  margin: 0;
+}
+
+.header {
+    width: 70%;
+    float: left;
+    color: #f11010;
+    height: 50px;
+    background: #F0F0F0;
+    border-bottom: 1px solid black;
+}
+
+.userbox {
+    float: left;
+    width: 30%;
+    float: left;
+    height: 50px;
+    background: #F0F0F0;
+    border-bottom: 1px solid black;
+}
+
+.userbox h1 {
+    font-size: 11px;
+}
+
+.header h1 {
+    height: 100%;
+    padding: 0 0 0 100px;
+    margin: 0;
+}
+
+.menu {
+    float: left;
+    width: 15%;
+    height: 800px;
+    background: #F0F0F0;
+}
+
+.content {
+    float: left;
+    width: 85%;
+    height: 800px;
+    background: #F9F9F9;
+}
+
+.menu p {
+    padding: 50px 20px 20px 20px;
+}
+
+.menu a {
+    color: black;
+}
+
+.menu a:hover {
+    color: #f11010;
+}
+
+.footer {
+    width: 100%;
+    height: 100px;    
+    background: #F0F0F0;
+}
+
