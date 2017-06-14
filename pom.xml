@@ -7,6 +7,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>Demonstrateur</name>
+  
   <repositories>
     <repository>
       <snapshots>
@@ -14,9 +15,10 @@
       </snapshots>
       <id>central</id>
       <name>Central Repository</name>
-      <url>https://repo.maven.apache.org/maven2</url>
+      <url>http://repo.maven.apache.org/maven2</url>
     </repository>
   </repositories>
+  
   <pluginRepositories>
     <pluginRepository>
       <releases>
@@ -27,15 +29,18 @@
       </snapshots>
       <id>central</id>
       <name>Central Repository</name>
-      <url>https://repo.maven.apache.org/maven2</url>
+      <url>http://repo.maven.apache.org/maven2</url>
     </pluginRepository>
   </pluginRepositories>
+  
   <build>
+  
     <sourceDirectory>C:\Users\sradenac\workspace\Demonstrateur\src\main\java</sourceDirectory>
     <scriptSourceDirectory>C:\Users\sradenac\workspace\Demonstrateur\src\main\scripts</scriptSourceDirectory>
     <testSourceDirectory>C:\Users\sradenac\workspace\Demonstrateur\src\test\java</testSourceDirectory>
     <outputDirectory>C:\Users\sradenac\workspace\Demonstrateur\target\classes</outputDirectory>
     <testOutputDirectory>C:\Users\sradenac\workspace\Demonstrateur\target\test-classes</testOutputDirectory>
+    
     <resources>
       <resource>
         <directory>C:\Users\sradenac\workspace\Demonstrateur\src\main\resources</directory>
