@@ -15,7 +15,7 @@
 </head>
 <body>
 	<div class="header">
-		<h1>Pictionnary Online</h1>
+		<h1>DevMode</h1>
 	</div>
 	<div class="userbox">
 		<h1></h1>
@@ -24,12 +24,24 @@
 	</div>
 	<div class="content">
 	
-	<form method="post" action="auth">
+	<form method="post" action="accueil">
 		<label for="identifiant"> Identifiant : <br /> <input
 			type="text" name="identifiant" id="identifiant" />
 		</label> <br /> <br /> <label for="mdp"> Mot de passe : <br />
 			<input type="password" name="mdp" id="mdp" />
-		</label> <br /> <br /><input type="submit" name="Créer un compte"/> <input type="submit" name="Valider"/>
+		</label> <br /> <br /> <input type="submit" value="Valider"/>
+	</form>
+	<form method="post" action="creercompte">
+	<br /> <br />
+	<br /> <br />
+		<label for="identifiant"> Identifiant : <br /> <input
+			type="text" name="identifiant" id="identifiant" />
+		</label> <br /> <br /> <label for="mdp"> Mot de passe : <br />
+			<input type="password" name="mdp" id="mdp" />
+		</label> <br /> <br /> <label for="mdp"> Confirmation mot de passe : <br />
+			<input type="password" name="mdpConf" id="mdpConf" />
+		</label> <br /> <br />
+		<input type="submit" value="Créer un compte"/>
 	</form>
 	</div>
 </body>

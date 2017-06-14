@@ -12,7 +12,7 @@
 		</cookie-config>
 	</session-config>
 	
-	<filter>
+	<!-- <filter>
         <filter-name>FilterServlet</filter-name>
         <filter-class>fr.istic.gla.tp.servlet.FilterServlet</filter-class>
     </filter>
@@ -21,10 +21,15 @@
         <filter-name>FilterServlet</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-    
+    -->
 	<servlet>
         <servlet-name>accueil</servlet-name>
-        <servlet-class>fr.istic.gla.tp.servlet.AccueilServlet</servlet-class>
+        <servlet-class>stage.devops.servlet.AccueilServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+        <servlet-name>creercompte</servlet-name>
+        <servlet-class>stage.devops.servlet.CreerCompteServlet</servlet-class>
 	</servlet>
 	
 	<servlet>
@@ -121,4 +126,11 @@
         <servlet-name>accueil</servlet-name>
 	    <url-pattern>/accueil</url-pattern>
 	</servlet-mapping>
+	
+	<servlet-mapping>
+        <servlet-name>creercompte</servlet-name>
+	    <url-pattern>/creercompte</url-pattern>
+	</servlet-mapping>
+	
+	
 </web-app>

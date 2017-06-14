@@ -38,6 +38,7 @@ public class AccueilServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		//Récupération login et pwd
+		
 		String login = req.getParameter("identifiant");
 		String pwd = req.getParameter("mdp");
 		
@@ -86,7 +87,7 @@ public class AccueilServlet extends HttpServlet {
 				HttpSession httpsession = req.getSession();
 				httpsession.setAttribute("utilisateur", utilisateur);
 				
-				resp.sendRedirect("/ForumGLA/accueil");
+				resp.sendRedirect("/ForumGLA/createFil");
 			}
 		}
 
@@ -100,7 +101,7 @@ public class AccueilServlet extends HttpServlet {
 	 * {@inheritDoc}
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/acceuil.jsp").forward(req, resp);
+		req.getRequestDispatcher("/accueil.jsp").forward(req, resp);
 
 	}
 
