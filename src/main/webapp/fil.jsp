@@ -6,7 +6,7 @@
 
 
 <!-- Directive chargeant le bean de l'utilisateur en session -->
-<jsp:useBean id="joueur" class="stage.devops.beans.Joueur" scope="session"/>
+<jsp:useBean id="utilisateur" class="fr.istic.gla.tp.beans.Utilisateur" scope="session"/>
 
 
 <html>
@@ -19,7 +19,7 @@
             <h1>Forum de discussion TP GLA</h1>
         </div>
         <div class="userbox">
-            <h1>Connecté en tant que : ${joueur.login} (${joueur.profil})</h1>
+            <h1>Connecté en tant que : ${utilisateur.login} (${utilisateur.profil})</h1>
         </div>
         <div class="menu">
         	<p>

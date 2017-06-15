@@ -4,7 +4,7 @@
 
 
 <!-- Directive chargeant le bean de l'utilisateur en session -->
-<jsp:useBean id="joueur" class="stage.devops.beans.Joueur"
+<jsp:useBean id="utilisateur" class="fr.istic.gla.tp.beans.Utilisateur"
 	scope="session" />
 
 
@@ -15,33 +15,27 @@
 </head>
 <body>
 	<div class="header">
-		<h1>DevMode</h1>
+		<h1>Forum de discussion TP GLA</h1>
 	</div>
 	<div class="userbox">
-	<h1>Connecté en tant que : ${joueur.login} (${joueur.profil})</h1>
+		<h1>Connecté en tant que : ${utilisateur.login}
+			(${utilisateur.profil})</h1>
 	</div>
 	<div class="menu">
+		<p>
+			<a href="accueil">Accueil</a><br>
+			<a href="deconnexion">Déconnexion</a><br>
+			<a href="createFil">Créer un fil</a><br>
+		</p>
 	</div>
 	<div class="content">
 	
-	<form method="post" action="accueil">
+	<form method="post" action="auth">
 		<label for="identifiant"> Identifiant : <br /> <input
 			type="text" name="identifiant" id="identifiant" />
 		</label> <br /> <br /> <label for="mdp"> Mot de passe : <br />
 			<input type="password" name="mdp" id="mdp" />
-		</label> <br /> <br /> <input type="submit" value="Valider"/>
-	</form>
-	<form method="post" action="creercompte">
-	<br /> <br />
-	<br /> <br />
-		<label for="identifiant"> Identifiant : <br /> <input
-			type="text" name="identifiant" id="identifiant" />
-		</label> <br /> <br /> <label for="mdp"> Mot de passe : <br />
-			<input type="password" name="mdp" id="mdp" />
-		</label> <br /> <br /> <label for="mdp"> Confirmation mot de passe : <br />
-			<input type="password" name="mdpConf" id="mdpConf" />
-		</label> <br /> <br />
-		<input type="submit" value="Créer un compte"/>
+		</label> <br /> <br /> <input type="submit" name="valider"/>
 	</form>
 	</div>
 </body>

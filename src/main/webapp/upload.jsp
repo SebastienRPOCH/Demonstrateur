@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-
+           
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 
 <!-- Directive chargeant le bean de l'utilisateur en session -->
-<jsp:useBean id="joueur" class="stage.devops.beans.Joueur" scope="session"/>
+<jsp:useBean id="utilisateur" class="fr.istic.gla.tp.beans.Utilisateur" scope="session"/>
+<jsp:useBean id="fil" class="fr.istic.gla.tp.beans.Fil" scope="session"/>
 
 
 <html>
@@ -19,7 +19,7 @@
             <h1>Forum de discussion TP GLA</h1>
         </div>
         <div class="userbox">
-            <h1>Connecté en tant que : ${joueur.login} (${joueur.profil})</h1>
+            <h1>Connecté en tant que : ${utilisateur.login} (${utilisateur.profil})</h1>
         </div>
         <div class="menu">
         	<p>
@@ -30,20 +30,15 @@
             </p>
         </div>
         <div class="content">
-        	<form method="post" action="accueil">
-				<br /> <input type="submit" name="retour" value="Retour"/>
-        	</form>
-        	<h1>Liste des Messages dans le fil ${currentFil.nom} :</h1><br>
         	
-        	
-        	
-        	<c:forEach items="${messages}" var="message">
-        		<B><c:out value="${message.nomAuteur} :"></c:out></B> <c:out value="${message.texte}"></c:out><br>
-        		<a href="supprMessage?idM=${message.id}">Supprimer</a><br>
-        		<HR>
-        	</c:forEach>
-        	
-			
+        	<img src="${image}" width="60"><br>
+        	<form method="POST" action="upload" enctype="multipart/form-data">
+        	File:
+            <input type="file" name="file" id="file" /> <br/>
+            </br>
+            <input type="submit" value="Upload" name="upload" id="upload" />
+			</form>
+			Taille max du fichier 10000.
         </div>
     </body>
 </html>

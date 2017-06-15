@@ -18,7 +18,7 @@
 		<h1>DevMode</h1>
 	</div>
 	<div class="userbox">
-	<h1>Connecté en tant que : ${joueur.login} (${joueur.profil})</h1>
+		<h1></h1>
 	</div>
 	<div class="menu">
 	</div>

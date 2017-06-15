@@ -35,10 +35,11 @@ public class Ami {
 	public boolean getRepondre() {
 		return repondre;
 	}
-
-	public void setProfil(boolean repondre) {
+	
+	public void setRepondre(boolean repondre){
 		this.repondre = repondre;
 	}
+
 	public String getRepondreTexte() {
 		return repondreTexte;
 	}

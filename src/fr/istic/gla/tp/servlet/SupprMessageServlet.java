@@ -49,7 +49,7 @@ public class SupprMessageServlet extends HttpServlet {
 
 		try {
 			System.out.println("Message : " + CurMsgList);
-			session.remove(CurMsgList.get(0));
+			//session.remove(CurMsgList.get(0));
 			tx.commit();
 
 		} catch (Exception e) {
