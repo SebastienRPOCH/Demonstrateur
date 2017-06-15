@@ -73,9 +73,6 @@ public class CreerCompteServlet extends HttpServlet {
 
 				DBCollection coll = db.getCollection("mycol");
 				System.out.println("Collection mycol selected successfully");
-				BasicDBObject query = new BasicDBObject("image", "");
-				coll.remove(query);
-				
 				BasicDBObject amiDefault = new BasicDBObject("login", "").append("dessinerPour", false)
 						.append("repondreA", false).append("repText", "").append("repImage", "")
 						.append("commentaire", "");

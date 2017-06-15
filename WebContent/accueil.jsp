@@ -23,7 +23,6 @@
 	<div class="menu">
 	</div>
 	<div class="content">
-	
 	<form method="post" action="accueil">
 		<label for="identifiant"> Identifiant : <br /> <input
 			type="text" name="identifiant" id="identifiant" />
