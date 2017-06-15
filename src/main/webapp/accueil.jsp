@@ -18,12 +18,11 @@
 		<h1>DevMode</h1>
 	</div>
 	<div class="userbox">
-		<h1></h1>
+	<h1>Connecté en tant que : ${joueur.login} (${joueur.profil})</h1>
 	</div>
 	<div class="menu">
 	</div>
 	<div class="content">
-	
 	<form method="post" action="accueil">
 		<label for="identifiant"> Identifiant : <br /> <input
 			type="text" name="identifiant" id="identifiant" />
