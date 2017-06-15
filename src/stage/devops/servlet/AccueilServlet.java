@@ -62,7 +62,7 @@ public class AccueilServlet extends HttpServlet {
 		try {
 
 			// To connect to mongodb server
-			MongoClient mongoClient = new MongoClient("localhost", 27017);
+			MongoClient mongoClient = new MongoClient("172.9.9.5", 27017);
 
 			// Now connect to your databases
 			DB db = mongoClient.getDB("test");
