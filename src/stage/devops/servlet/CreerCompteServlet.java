@@ -28,6 +28,7 @@ import com.mongodb.MongoClient;
 
 import fr.istic.gla.tp.beans.Fil;
 import fr.istic.gla.tp.beans.Utilisateur;
+import stage.devops.beans.Joueur;
 
 /**
  * 
@@ -46,9 +47,12 @@ public class CreerCompteServlet extends HttpServlet {
 		String login = req.getParameter("identifiant");
 		String pwd = req.getParameter("mdp");
 		String pwdConf = req.getParameter("mdpConf");
-
-		if (!pwd.equals(pwdConf))
+		HttpSession hs = req.getSession();
+		hs.setAttribute("msg", "");
+		if (!pwd.equals(pwdConf) || login.equals("") || login == null){
+			hs.setAttribute("msg", "Echec de la creation");
 			resp.sendRedirect("/Demonstrateur/accueil");
+		}
 		else {
 			// Hash du pwd
 			MessageDigest md = null;
@@ -65,7 +69,9 @@ public class CreerCompteServlet extends HttpServlet {
 			try {
 
 				// To connect to mongodb server
-				MongoClient mongoClient = new MongoClient("172.9.9.5", 27017);
+				MongoClient mongoClient = new MongoClient("localhost", 27017);
+				// MongoClient mongoClient = new MongoClient("172.9.9.5",
+				// 27017);
 
 				// Now connect to your databases
 				DB db = mongoClient.getDB("test");
@@ -73,69 +79,48 @@ public class CreerCompteServlet extends HttpServlet {
 
 				DBCollection coll = db.getCollection("mycol");
 				System.out.println("Collection mycol selected successfully");
-				BasicDBObject amiDefault = new BasicDBObject("login", "").append("dessinerPour", false)
-						.append("repondreA", false).append("repText", "").append("repImage", "")
-						.append("commentaire", "");
-				List<BasicDBObject> listAmi = new ArrayList<BasicDBObject>();
-				listAmi.add(amiDefault);
-				BasicDBObject newUtil = new BasicDBObject("login", login).append("mdp", strpwd).append("image", "").append("profil", "joueur")
-						.append("listAmi", listAmi).append("score", 0);
 
-				coll.insert(newUtil);
-				System.out.println("Document inserted successfully");
+				BasicDBObject whereQuery = new BasicDBObject("login", login);
 
-				DBCursor cursor = coll.find();
-				int i = 1;
+				DBCursor c = coll.find(whereQuery);
+				Joueur joueur = new Joueur();
+				if (c.hasNext()) {
+					
+					hs.setAttribute("msg", "Ce login existe déjà");
+					
+					resp.sendRedirect("/Demonstrateur/accueil");
+				} else {
+					BasicDBObject amiDefault = new BasicDBObject("login", "").append("dessinerPour", false)
+							.append("repondreA", false).append("repText", "").append("repImage", "")
+							.append("commentaire", "");
+					List<BasicDBObject> listAmi = new ArrayList<BasicDBObject>();
+					listAmi.add(amiDefault);
+					BasicDBObject newUtil = new BasicDBObject("login", login).append("mdp", strpwd).append("image", "default")
+							.append("profil", "joueur").append("listAmi", listAmi).append("score", 0);
 
-				while (cursor.hasNext()) {
-					System.out.println("Inserted Document: " + i);
-					System.out.println(cursor.next());
-					i++;
+					coll.insert(newUtil);
+					System.out.println("Document inserted successfully");
+
+					DBCursor cursor = coll.find();
+					int i = 1;
+
+					while (cursor.hasNext()) {
+						System.out.println("Inserted Document: " + i);
+						System.out.println(cursor.next());
+						i++;
+					}
+					hs.setAttribute("msg", "Compte " + login + " créé");
 				}
 
 			} catch (Exception e) {
 				System.err.println(e.getClass().getName() + ": " + e.getMessage());
 			}
-			resp.sendRedirect("/Demonstrateur/accueil");
-		}
 
-		/*
-		 * Utilisateur utilisateur = new Utilisateur();
-		 * 
-		 * // Recherche dans la base de donnée si le login est présent
-		 * Configuration configuration = new Configuration(); SessionFactory
-		 * factory = configuration.configure("/ressources/hibernate.cfg.xml").
-		 * buildSessionFactory(); Session session = factory.openSession();
-		 * 
-		 * Transaction tx = session.beginTransaction(); Criteria criteria =
-		 * session.createCriteria(Utilisateur.class).add(Restrictions.eq(
-		 * "login", login)); List<Utilisateur> utilisateurList =
-		 * criteria.list();
-		 * 
-		 * for (Utilisateur util : utilisateurList) { if
-		 * (util.getLogin().equals(login)) { utilisateur = util; break; } }
-		 * tx.commit();
-		 * 
-		 * // Hash du pwd MessageDigest md = null; try { md =
-		 * MessageDigest.getInstance("SHA-256"); } catch
-		 * (NoSuchAlgorithmException e) { // TODO Auto-generated catch block
-		 * e.printStackTrace(); } byte[] hash = md.digest(pwd.getBytes());
-		 * BigInteger bi = new BigInteger(1, hash); String strpwd =
-		 * (String.format("%0" + (hash.length << 1) + "X", bi)).toLowerCase();
-		 * 
-		 * // Compare pour savoir si le login est null puis compare le hash et
-		 * // le pwd trouvé en base if (utilisateur.getLogin() == null || strpwd
-		 * == null) { resp.sendRedirect("/ForumGLA/echecAuth.jsp"); } else {
-		 * 
-		 * if (!strpwd.equals(utilisateur.getPassword())) {
-		 * resp.sendRedirect("/ForumGLA/echecAuth.jsp"); } else {
-		 * 
-		 * // Met en session l'utilisateur HttpSession httpsession =
-		 * req.getSession(); httpsession.setAttribute("utilisateur",
-		 * utilisateur);
-		 * 
-		 * resp.sendRedirect("/ForumGLA/accueil"); } } }
-		 */
+			
+
+			resp.sendRedirect("/Demonstrateur/");
+		}
+	
 
 	}
 

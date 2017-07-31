@@ -33,6 +33,61 @@
 	</servlet>
 	
 	<servlet>
+        <servlet-name>upload</servlet-name>
+        <servlet-class>stage.devops.servlet.UploadServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+        <servlet-name>dessinerPour</servlet-name>
+        <servlet-class>stage.devops.servlet.DessinerPourServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+        <servlet-name>ajoutami</servlet-name>
+        <servlet-class>stage.devops.servlet.AjoutAmiServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+        <servlet-name>repondrea</servlet-name>
+        <servlet-class>stage.devops.servlet.RepondreAServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+        <servlet-name>ladder</servlet-name>
+        <servlet-class>stage.devops.servlet.LadderServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+        <servlet-name>dessinerpourami</servlet-name>
+        <servlet-class>stage.devops.servlet.DessinerPourAmiServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+        <servlet-name>dessinerpourami</servlet-name>
+	    <url-pattern>/dessinerpourami</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+        <servlet-name>ladder</servlet-name>
+	    <url-pattern>/ladder</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+        <servlet-name>repondrea</servlet-name>
+	    <url-pattern>/repondrea</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+        <servlet-name>ajoutami</servlet-name>
+	    <url-pattern>/ajoutami</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+        <servlet-name>dessinerPour</servlet-name>
+	    <url-pattern>/dessinerPour</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
         <servlet-name>resetDatabase</servlet-name>
         <servlet-class>fr.istic.gla.tp.servlet.ResetDatabaseServlet</servlet-class>
 	</servlet>
@@ -62,34 +117,23 @@
         <servlet-class>fr.istic.gla.tp.servlet.EcrireMessageServlet</servlet-class>
 	</servlet>
 	
-	<servlet>
-        <servlet-name>profil</servlet-name>
-        <servlet-class>fr.istic.gla.tp.servlet.ProfilServlet</servlet-class>
-	</servlet>
-	
-	<servlet>
-        <servlet-name>upload</servlet-name>
-        <servlet-class>fr.istic.gla.tp.servlet.UploadServlet</servlet-class>
-	</servlet>
 	
 	<servlet>
         <servlet-name>supprMessage</servlet-name>
-        <servlet-class>fr.istic.gla.tp.servlet.SupprMessageServlet</servlet-class>
+        <servlet-class>fr.istic.gla.tp.servlet.EcrireMessageServlet</servlet-class>
 	</servlet>
-
+	
 	<servlet-mapping>
         <servlet-name>supprMessage</servlet-name>
 	    <url-pattern>/supprMessage</url-pattern>
 	</servlet-mapping>
+	
+	
+	
 
 	<servlet-mapping>
         <servlet-name>upload</servlet-name>
 	    <url-pattern>/upload</url-pattern>
-	</servlet-mapping>
-
-	<servlet-mapping>
-        <servlet-name>profil</servlet-name>
-	    <url-pattern>/profil</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>

@@ -18,30 +18,31 @@
 		<h1>DevMode</h1>
 	</div>
 	<div class="userbox">
-	<h1>Connecté en tant que : ${joueur.login} (${joueur.profil})</h1>
+		<h1>Connecté en tant que : ${joueur.login} (${joueur.profil})</h1>
 	</div>
 	<div class="menu">
+		<p>
+			${msg}<br>
+		</p>
 	</div>
 	<div class="content">
-	<form method="post" action="accueil">
-		<label for="identifiant"> Identifiant : <br /> <input
-			type="text" name="identifiant" id="identifiant" />
-		</label> <br /> <br /> <label for="mdp"> Mot de passe : <br />
-			<input type="password" name="mdp" id="mdp" />
-		</label> <br /> <br /> <input type="submit" value="Valider"/>
-	</form>
-	<form method="post" action="creercompte">
-	<br /> <br />
-	<br /> <br />
-		<label for="identifiant"> Identifiant : <br /> <input
-			type="text" name="identifiant" id="identifiant" />
-		</label> <br /> <br /> <label for="mdp"> Mot de passe : <br />
-			<input type="password" name="mdp" id="mdp" />
-		</label> <br /> <br /> <label for="mdp"> Confirmation mot de passe : <br />
-			<input type="password" name="mdpConf" id="mdpConf" />
-		</label> <br /> <br />
-		<input type="submit" value="Créer un compte"/>
-	</form>
+		<form method="post" action="accueil">
+			<label for="identifiant"> Identifiant : <br /> <input
+				type="text" name="identifiant" id="identifiant" />
+			</label> <br /> <br /> <label for="mdp"> Mot de passe : <br /> <input
+				type="password" name="mdp" id="mdp" />
+			</label> <br /> <br /> <input type="submit" value="Valider" />
+		</form>
+		<form method="post" action="creercompte">
+			<br /> <br /> <br /> <br /> <label for="identifiant">
+				Identifiant : <br /> <input type="text" name="identifiant"
+				id="identifiant" />
+			</label> <br /> <br /> <label for="mdp"> Mot de passe : <br /> <input
+				type="password" name="mdp" id="mdp" />
+			</label> <br /> <br /> <label for="mdp"> Confirmation mot de passe
+				: <br /> <input type="password" name="mdpConf" id="mdpConf" />
+			</label> <br /> <br /> <input type="submit" value="Créer un compte" />
+		</form>
 	</div>
 </body>
 </html>

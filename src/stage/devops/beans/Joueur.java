@@ -17,7 +17,9 @@ public class Joueur {
 	private int score;
 	
 	private List<Ami> listAmi;
-
+	
+	
+	
 	public String getLogin() {
 		return login;
 	}
