@@ -17,7 +17,9 @@ import org.mockito.Mockito;
 
 import stage.devops.servlet.AccueilServlet;
 
+public class AccueilServletTest {
 	
+	/*
 	@Test
 	public void testDoPostHttpServletRequestHttpServletResponse() throws ServletException, IOException {
 		HttpServletRequest req = mock(HttpServletRequest.class);
@@ -52,7 +54,9 @@ import stage.devops.servlet.AccueilServlet;
         new AccueilServlet().doGet(req, resp);
         
         verify(req).getRequestDispatcher(dispatcherArgument.capture());
+        assertEquals("/accueil.jsp", dispatcherArgument.getValue());
         
 
 	}
+*/
 }
