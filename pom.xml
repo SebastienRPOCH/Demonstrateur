@@ -9,7 +9,7 @@
 	<packaging>war</packaging>
 	<name>Demonstrateur</name>
 	<scm>
-    		<connection>scm:git:https://github.com/SebastienRPOCH/Demonstrateur</connection>
+    		<connection>scm:svn:file:///C:/workspace/SVN/</connection>
 	</scm>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>

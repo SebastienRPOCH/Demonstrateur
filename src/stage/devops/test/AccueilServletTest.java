@@ -12,8 +12,6 @@ import javax.servlet.http.HttpSession;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Mockito;
 
 import stage.devops.servlet.AccueilServlet;
 
