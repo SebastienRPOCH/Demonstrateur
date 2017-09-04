@@ -14,9 +14,6 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 </head>
 <body>
-	<div class="header">
-		<h1>DevMode</h1>
-	</div>
 	<div class="content">
 	<form method="post" action="accueil">
 		<label for="identifiant"> Identifiant : <br /> <input
