@@ -16,8 +16,7 @@
 <body>
 	<div class="header">
 		<h1>DevMode</h1>
-	</div>
-	
+	</div>	
 	<div class="content">
 		<form method="post" action="accueil">
 			<label for="identifiant"> Identifiant : <br /> <input
